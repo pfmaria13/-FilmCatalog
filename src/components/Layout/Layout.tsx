@@ -13,12 +13,11 @@ import {
 import { Movie, Favorite, AutoAwesomeMosaic } from '@mui/icons-material';
 
 import { ComparePanel } from './ComparePanel';
-import { ToolbarSearchField } from './ToolbarSearchField';
 
 type Props = { children: ReactNode };
 
 export function Layout({ children }: Props) {
-  const { pathname, search } = useLocation();
+  const { pathname } = useLocation();
 
   const isActive = (path: string) => pathname === path;
 
@@ -46,8 +45,6 @@ export function Layout({ children }: Props) {
               </Box>
             </Link>
           </Typography>
-
-          <ToolbarSearchField key={`${pathname}-${search}`} />
 
           <Box sx={{ flexGrow: 1 }} />
 
